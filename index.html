@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>
+        <input style="margin: 200px auto; padding: 20px 100px; background-color: rgb(252, 252, 252);" type="text" name="pul" id="field">
+    </label>
+    <p class="info" style="font-size: 60px; font-weight: 800; color: #000;">Lorem ipsum dolor sit amet.</p>
+    <p class="deskription1" style="font-size: 50px; font-weight: 800;"></p>
+    <p class="deskription2" style="font-size: 50px; font-weight: 800;"></p>
+    <p class="deskription3" style="font-size: 50px; font-weight: 800;"></p>
+    <script>
+        const text = document.querySelector(".info")
+        const a = 500 * 94433.34; //doll
+        const b = 250 * 94433.34; //doll
+        const c = 120 * 10354.03; //yevro
+        const jami = a + c + b;
+        const x = Number(prompt("sayohat uchun ajratgan pulingizni kiriting"));
+        const yetmaydi = jami - x;
+        if (jami <= x) {
+            text.textContent = "oq yo'l yaxshi boring";
+        } else if (x < 0) {
+            text.textContent = "bizni ahmoq qilmang";
+        } else {
+            text.textContent = "sizning sayoxatga borishingizga " + yetmaydi + " so'm pul yetmaydi yana pul to'plang";
+        }
+        const pul1 =document.querySelector(".deskription1");
+        const pul2 =document.querySelector(".deskription2");
+        const pul3 =document.querySelector(".deskription3");
+        const y = Number(prompt("jami pulingizni kiriting"));
+        const usd=y * 42000;
+        const doll=y * 94433.34;
+        const evro=y * 10354.03;
+        pul1.textContent="pulingiz " + usd + " USD";
+        pul2.textContent="pulingiz " + doll + " dollar";
+        pul3.textContent="pulingiz " + evro + " yevro";
+
+    </script>
+</body>
+
+</html>
