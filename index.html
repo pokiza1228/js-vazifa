@@ -28,16 +28,16 @@
         const pul3 = document.querySelector(".deskription3");
         const input = document.querySelector(".field");
         const form = document.querySelector(".form-pul");
+        const D=94433.34;
+        const YE=10354.03;
+        const U=11.560;
+        const a = 500 * D; //doll
+        const b = 250 * D; //doll
+        const c = 120 * YE; //yevro
+        const jami = a + c + b;
         form.addEventListener("submit", function (evt) {
             evt.preventDefault();
             const y = Number(input.value);
-            const d=94433.34;
-            const ye=10354.03;
-            const u=42000;
-            const a = 500 * d; //doll
-            const b = 250 * d; //doll
-            const c = 120 * ye; //yevro
-            const jami = a + c + b;
             const yetmaydi = jami - y;
             if (jami <= y) {
                 text.textContent = "oq yo'l yaxshi boring";
@@ -47,9 +47,9 @@
                 text.textContent = "sizning sayoxatga borishingizga " + yetmaydi +
                     " so'm pul yetmaydi yana pul to'plang";
             }
-            const usd = y * u;
-            const doll = y * d;
-            const evro = y * ye;
+            const usd = y * U;
+            const doll = y * D;
+            const evro = y * YE;
             pul1.textContent = y >= 0 ? "pulingiz " + usd + " USD" : "ahmoq qilmang";
             pul2.textContent = y >= 0 ? "pulingiz " + doll + " dollar" : "ahmoq qilmang";
             pul3.textContent = y >= 0 ? "pulingiz " + evro + " yevro" : "ahmoq qilmang >>";
