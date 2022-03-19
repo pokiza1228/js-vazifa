@@ -13,7 +13,7 @@
         <label style="font-size: 30px; font-weight: 800;">
             pulingiz kiriting
             <input class="field" style="margin: 200px auto; padding: 20px 100px; background-color: rgb(252, 252, 252);"
-                type="text" name="pul" id="field">
+                type="number" name="pul" id="field">
         </label>
         <button type="submit" style="padding: 20px; font-size: 15px; font-weight: 600;">jo'natish</button>
     </form>
@@ -31,9 +31,12 @@
         form.addEventListener("submit", function (evt) {
             evt.preventDefault();
             const y = Number(input.value);
-            const a = 500 * 94433.34; //doll
-            const b = 250 * 94433.34; //doll
-            const c = 120 * 10354.03; //yevro
+            const d=94433.34;
+            const ye=10354.03;
+            const u=42000;
+            const a = 500 * d; //doll
+            const b = 250 * d; //doll
+            const c = 120 * ye; //yevro
             const jami = a + c + b;
             const yetmaydi = jami - y;
             if (jami <= y) {
@@ -44,9 +47,9 @@
                 text.textContent = "sizning sayoxatga borishingizga " + yetmaydi +
                     " so'm pul yetmaydi yana pul to'plang";
             }
-            const usd = y * 42000;
-            const doll = y * 94433.34;
-            const evro = y * 10354.03;
+            const usd = y * u;
+            const doll = y * d;
+            const evro = y * ye;
             pul1.textContent = y >= 0 ? "pulingiz " + usd + " USD" : "ahmoq qilmang";
             pul2.textContent = y >= 0 ? "pulingiz " + doll + " dollar" : "ahmoq qilmang";
             pul3.textContent = y >= 0 ? "pulingiz " + evro + " yevro" : "ahmoq qilmang >>";
