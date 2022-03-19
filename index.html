@@ -47,9 +47,9 @@
                 text.textContent = "sizning sayoxatga borishingizga " + yetmaydi +
                     " so'm pul yetmaydi yana pul to'plang";
             }
-            const usd = y * U;
-            const doll = y * D;
-            const evro = y * YE;
+            const usd = y / U;
+            const doll = y / D;
+            const evro = y / YE;
             pul1.textContent = y >= 0 ? "pulingiz " + usd + " USD" : "ahmoq qilmang";
             pul2.textContent = y >= 0 ? "pulingiz " + doll + " dollar" : "ahmoq qilmang";
             pul3.textContent = y >= 0 ? "pulingiz " + evro + " yevro" : "ahmoq qilmang >>";
