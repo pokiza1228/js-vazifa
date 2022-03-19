@@ -31,9 +31,9 @@
         const D=94433.34;
         const YE=10354.03;
         const U=11.560;
-        const a = 500 * D; //doll
-        const b = 250 * D; //doll
-        const c = 120 * YE; //yevro
+        const a = Math.round(500 * D); //doll
+        const b = Math.round(250 * D); //doll
+        const c = Math.round(120 * YE); //yevro
         const jami = a + c + b;
         form.addEventListener("submit", function (evt) {
             evt.preventDefault();
@@ -47,9 +47,9 @@
                 text.textContent = "sizning sayoxatga borishingizga " + yetmaydi +
                     " so'm pul yetmaydi yana pul to'plang";
             }
-            const usd = y / U;
-            const doll = y / D;
-            const evro = y / YE;
+            const usd = Math.round(y / U);
+            const doll = Math.round(y / D);
+            const evro = Math.round(y / YE);
             pul1.textContent = y >= 0 ? "pulingiz " + usd + " USD" : "ahmoq qilmang";
             pul2.textContent = y >= 0 ? "pulingiz " + doll + " dollar" : "ahmoq qilmang";
             pul3.textContent = y >= 0 ? "pulingiz " + evro + " yevro" : "ahmoq qilmang >>";
