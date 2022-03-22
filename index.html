@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- uy ishi alisherning pullari -->
     <form class="form-pul" action="#" method="get">
         <label style="font-size: 30px; font-weight: 800;">
             pulingiz kiriting
@@ -21,7 +22,31 @@
     <p class="deskription1" style="font-size: 50px; font-weight: 800;"></p>
     <p class="deskription2" style="font-size: 50px; font-weight: 800;"></p>
     <p class="deskription3" style="font-size: 50px; font-weight: 800;"></p>
+
+    <!-- sinf ishi sekundni minutga ogirish -->
+    <form class="form-soat" action="#" method="get">
+        <label style="font-size: 30px; font-weight: 800;">
+            sekundi kiriting
+            <input class="sekunt" style="margin: 200px auto; padding: 20px 100px; background-color: rgb(252, 252, 252);"
+                type="number" name="pul">
+        </label>
+        <button type="submit" style="padding: 20px; font-size: 15px; font-weight: 600;">jo'natish</button>
+    </form>
+    <p class="soatlar" style="font-size: 50px; font-weight: 800;"></p>
+
+
+    <!-- uy ishi mili keskundni kun soat minut sekundga o'girish -->
+    <form class="form-milisekund" action="#" method="get">
+        <label style="font-size: 30px; font-weight: 800;">
+            milli sekundlarni  sekundi kiriting
+            <input class="millisekunt" style="margin: 200px auto; padding: 20px 100px; background-color: rgb(252, 252, 252);"
+                type="number" name="pul">
+        </label>
+        <button type="submit" style="padding: 20px; font-size: 15px; font-weight: 600;">jo'natish</button>
+    </form>
+    <p class="soat-sekundlar" style="font-size: 50px; font-weight: 800;"></p>
     <script>
+        //uy ishi alisherning pullari
         const text = document.querySelector(".info");
         const pul1 = document.querySelector(".deskription1");
         const pul2 = document.querySelector(".deskription2");
@@ -54,6 +79,43 @@
             pul2.textContent = y >= 0 ? "pulingiz " + doll + " dollar" : "ahmoq qilmang";
             pul3.textContent = y >= 0 ? "pulingiz " + evro + " yevro" : "ahmoq qilmang >>";
         });
+
+
+
+        //sinf ishi sekundni minutga ogirish
+        const SOAT= 3600;
+        const MINT=60;
+        const sekundKelgan=document.querySelector(".form-soat");
+        const kegan=document.querySelector(".sekunt");
+        const chiqarish=document.querySelector(".soatlar");
+        
+        sekundKelgan.addEventListener("submit", function(evt){
+            evt.preventDefault();
+            const x=Number(kegan.value);
+            const soat=x / SOAT;
+            const a=(x-Math.floor(soat)*SOAT)- MINT*(Math.floor((x-Math.floor(soat)*SOAT)/MINT));
+            chiqarish.textContent = Math.floor(soat) + " Soat " + Math.floor((x-Math.floor(soat)*SOAT)/MINT) + " minut "  + a + " sekunt";
+        })
+
+
+        //uy ishi mili keskundni kun soat minut sekundga o'girish
+        const SECOND= 1000;
+        const MINUTES=SECOND * 60;
+        const HOUR= MINUTES * 60;
+        const DAY =HOUR*24;
+        const miliSekunddKelgan=document.querySelector(".form-milisekund");
+        const keganMilii=document.querySelector(".millisekunt");
+        const chiqarishUchun=document.querySelector(".soat-sekundlar");
+        miliSekunddKelgan.addEventListener("submit", function(evt){
+            evt.preventDefault();
+            const c=Number(keganMilii.value);
+            const k1=c/DAY;
+            const s2=(c - Math.floor(k1)*DAY)/HOUR;
+            const m3=(s2*HOUR- Math.floor(s2)*HOUR)/MINUTES;
+            const s4=(m3*MINUTES-Math.floor(m3)*MINUTES)/SECOND;
+            const mq=(s4*SECOND- Math.floor(s4)*SECOND);
+            chiqarishUchun.textContent=Math.floor(k1) + " kun, " + Math.floor(s2) + " soat, " + Math.floor(m3) + " minut, " + Math.floor(s4) + " sekund, " + Math.floor(mq)+ " millisekund."
+        })
     </script>
 </body>
 
