@@ -114,7 +114,12 @@
             const m3=(s2*HOUR- Math.floor(s2)*HOUR)/MINUTES;
             const s4=(m3*MINUTES-Math.floor(m3)*MINUTES)/SECOND;
             const mq=(s4*SECOND- Math.floor(s4)*SECOND);
-            chiqarishUchun.textContent= (k1 ? (Math.floor(k1)+ " kun"+(s2 || m3 || s4 || mq ? ", " : ".")) : "") + (s2 ? (Math.floor(s2) + " soat"+ (m3 || s4 || mq ? ", " : ".")) : "") + (m3 ? (Math.floor(m3) + " minut" +  (s4 || mq ? ", " : ".")) : "") + (s4 ? Math.floor(s4) + " sekund"+ (mq ? ", " : ".") : "") + (mq ? (Math.floor(mq)+ " millisekund.") : "")
+            const kunText= !k1 ? "" : (Math.floor(k1)+ " kun"+((s2 || m3 || s4 || mq) ? ", " : "."));
+            const soatText= s2 ? (Math.floor(s2) + " soat"+ ((m3 || s4 || mq) ? ", " : ".")) : "";
+            const minutText= m3 ? (Math.floor(m3) + " minut" +  ((s4 || mq) ? ", " : ".")) : "";
+            const sekundText = s4 ?( Math.floor(s4) + " sekund"+ (mq ? ", " : ".")) : "";
+            const miliText= mq ? (Math.floor(mq)+ " millisekund.") : "";
+            chiqarishUchun.textContent= kunText+soatText+minutText+sekundText+miliText;
         })
     </script>
 </body>
