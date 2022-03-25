@@ -68,10 +68,34 @@ najotArticle.append(year);
 najotArticle.append(rating);
 najotArticle.append(picture);
 
+const uyIshi= {
+guruh: "n 24",
+yonalish: "web-dasturlash",
+talabalar: "20 ta",
+ustoz: "Ibrohim aka",
+davomiyligi: "5 oy"
+}
 
+const uyIshiTitle = document.createElement("h2");
+uyIshiTitle.textContent = uyIshi.yonalish;
 
+const uyIshiUstoz = document.createElement("p");
+uyIshiUstoz.textContent = uyIshi.ustoz;
 
+const uyIshiTalabalar = document.createElement("p");
+uyIshiTalabalar.textContent = uyIshi.talabalar;
 
+const uyIshiDavomiyligi = document.createElement("p");
+uyIshiDavomiyligi.textContent = uyIshi.davomiyligi;
+
+const uyIshiGuruh = document.createElement("p");
+uyIshiGuruh.textContent = uyIshi.guruh;
+
+najotArticle.append(uyIshiTitle);
+najotArticle.append(uyIshiUstoz);
+najotArticle.append(uyIshiTalabalar);
+najotArticle.append(uyIshiDavomiyligi);
+najotArticle.append(uyIshiGuruh);
 
 //uy ishi alisherning pullari
 const text = document.querySelector(".info");
