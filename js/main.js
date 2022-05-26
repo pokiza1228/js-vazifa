@@ -1,3 +1,21 @@
+const context =document.querySelector("#p");
+const buttonClick=document.querySelector("#button")
+var i=0
+buttonClick.addEventListener("click",()=>{
+    interval=setInterval(
+    ()=>{
+        context.textContent=i;
+        i++
+    },(1)
+    )
+    setTimeout(()=>{
+        clearInterval(interval)
+    },1000)
+})
+
+
+
+
 const najotTalim = {
     styudens : 1000000,
     img: "../img/logo.jpg",
@@ -171,7 +189,16 @@ miliSekunddKelgan.addEventListener("submit", function(evt){
     const sekundText = s4 ?( Math.floor(s4) + " sekund"+ (mq ? ", " : ".")) : "";
     const miliText= mq ? (Math.floor(mq)+ " millisekund.") : "";
     chiqarishUchun.textContent= kunText+soatText+minutText+sekundText+miliText;
-})
+});
+
+
+
+
+
+
+
+
+const array = []
 
 
 
